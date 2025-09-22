@@ -1,0 +1,13 @@
+diff --git a/dist/generator/dialects/mysql/mysql-adapter.js b/dist/generator/dialects/mysql/mysql-adapter.js
+index 00fa99cafbf52f3f821403b82260c2ae76c15a84..637f4631b89b989a208d275f0ade8b5923306fe0 100644
+--- a/dist/generator/dialects/mysql/mysql-adapter.js
++++ b/dist/generator/dialects/mysql/mysql-adapter.js
+@@ -68,7 +68,7 @@ class MysqlAdapter extends adapter_1.Adapter {
+             time: new identifier_node_1.IdentifierNode('string'),
+             timestamp: new identifier_node_1.IdentifierNode('Date'),
+             tinyblob: new identifier_node_1.IdentifierNode('Buffer'),
+-            tinyint: new identifier_node_1.IdentifierNode('number'),
++            tinyint: new identifier_node_1.IdentifierNode('boolean'),
+             tinytext: new identifier_node_1.IdentifierNode('string'),
+             varbinary: new identifier_node_1.IdentifierNode('Buffer'),
+             varchar: new identifier_node_1.IdentifierNode('string'),

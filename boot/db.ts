@@ -4,7 +4,7 @@ import {
 } from "@/kysely/kysely.types";
 import { Environment } from "@/lib/utils/environment";
 import { Kysely, MysqlDialect, MysqlDialectConfig } from "kysely";
-import { createPool } from "mysql2/promise";
+import { createPool } from "mysql2";
 import { DB_VERBOSE } from "@/lib/globals";
 
 export const dialectConfig: MysqlDialectConfig = {

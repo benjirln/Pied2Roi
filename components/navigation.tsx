@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X, Search, User } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { CartSidebar } from "@/components/cart/cart-sidebar"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X, Search, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CartSidebar } from "@/components/cart/cart-sidebar";
+import { cn } from "@/lib/utils/cn";
 
 export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: "Hommes", href: "/men" },
@@ -16,7 +16,7 @@ export function Navigation() {
     { name: "Nouveautés", href: "/new-arrivals" },
     { name: "Marques", href: "/brands" },
     { name: "Soldes", href: "/sale" },
-  ]
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-sm">
@@ -47,12 +47,20 @@ export function Navigation() {
 
           {/* Right side icons */}
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="icon" className="hidden sm:flex hover-lift focus-ring">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden sm:flex hover-lift focus-ring"
+            >
               <Search className="h-5 w-5" />
               <span className="sr-only">Rechercher</span>
             </Button>
             <Link href="/account">
-              <Button variant="ghost" size="icon" className="hover-lift focus-ring">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover-lift focus-ring"
+              >
                 <User className="h-5 w-5" />
                 <span className="sr-only">Compte</span>
               </Button>
@@ -66,7 +74,11 @@ export function Navigation() {
               className="md:hidden hover-lift focus-ring"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
               <span className="sr-only">Basculer le menu</span>
             </Button>
           </div>
@@ -76,7 +88,9 @@ export function Navigation() {
         <div
           className={cn(
             "md:hidden transition-all duration-300 ease-in-out",
-            isMenuOpen ? "max-h-80 opacity-100 pb-6" : "max-h-0 opacity-0 overflow-hidden",
+            isMenuOpen
+              ? "max-h-80 opacity-100 pb-6"
+              : "max-h-0 opacity-0 overflow-hidden",
           )}
         >
           <div className="px-2 pt-4 space-y-2 border-t border-border">
@@ -90,7 +104,10 @@ export function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <Button variant="ghost" className="w-full justify-start px-4 py-3 sm:hidden hover-lift focus-ring">
+            <Button
+              variant="ghost"
+              className="w-full justify-start px-4 py-3 sm:hidden hover-lift focus-ring"
+            >
               <Search className="h-5 w-5 mr-3" />
               Rechercher
             </Button>
@@ -98,5 +115,5 @@ export function Navigation() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
