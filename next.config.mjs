@@ -8,7 +8,17 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.courir.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.courir.com",
+      },
+    ],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

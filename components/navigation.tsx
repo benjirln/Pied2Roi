@@ -11,11 +11,8 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Hommes", href: "/men" },
-    { name: "Femmes", href: "/women" },
-    { name: "Nouveautés", href: "/new-arrivals" },
-    { name: "Marques", href: "/brands" },
-    { name: "Soldes", href: "/sale" },
+    { name: "Hommes", href: "/category/homme" },
+    { name: "Femmes", href: "/category/femme" },
   ];
 
   return (
@@ -23,10 +20,8 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 hover-lift">
-            <span className="text-2xl font-bold tracking-tight hover:text-accent transition-colors duration-200">
-              SNEAKR
-            </span>
+          <Link href="/" className="flex-shrink-0">
+            <img src="/p2r.svg" alt="Logo" className="h-15" />
           </Link>
 
           {/* Desktop Navigation */}

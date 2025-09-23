@@ -1,15 +1,16 @@
-import Link from "next/link"
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import Link from "next/link";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const footerSections = [
     {
       title: "Boutique",
       links: [
-        { name: "Hommes", href: "/men" },
-        { name: "Femmes", href: "/women" },
-        { name: "Nouveautés", href: "/new-arrivals" },
-        { name: "Soldes", href: "/sale" },
+        { name: "Hommes", href: "/category/homme" },
+        { name: "Femmes", href: "/category/femme" },
+        { name: "Enfants", href: "/category/enfant" },
+        { name: "Tous les produits", href: "/category/all" },
       ],
     },
     {
@@ -39,14 +40,14 @@ export function Footer() {
         { name: "Conditions", href: "/terms" },
       ],
     },
-  ]
+  ];
 
   const socialLinks = [
     { name: "Facebook", icon: Facebook, href: "#" },
     { name: "Instagram", icon: Instagram, href: "#" },
     { name: "Twitter", icon: Twitter, href: "#" },
     { name: "YouTube", icon: Youtube, href: "#" },
-  ]
+  ];
 
   return (
     <footer className="bg-card/80 backdrop-blur-sm border-t border-border/50">
@@ -54,15 +55,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold mb-6 block hover:text-accent transition-colors">
-              SNEAKR
+            <Link
+              href="/"
+              className="text-2xl font-bold mb-6 block hover:text-accent transition-colors"
+            >
+              <img src="/p2r.svg" alt="Logo" className="max-w-40" />
             </Link>
             <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
-              Votre destination premium pour les sneakers les plus convoitées au monde. Authenticité garantie.
+              Votre destination premium pour les sneakers les plus convoitées au
+              monde. Authenticité garantie.
             </p>
             <div className="flex space-x-5">
               {socialLinks.map((social) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <Link
                     key={social.name}
@@ -72,7 +77,7 @@ export function Footer() {
                     <Icon className="h-5 w-5" />
                     <span className="sr-only">{social.name}</span>
                   </Link>
-                )
+                );
               })}
             </div>
           </div>
@@ -98,7 +103,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/50 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© 2024 SNEAKR. Tous droits réservés.</p>
+          <p className="text-muted-foreground text-sm">
+            © 2026 Pied2Roi. Tous droits réservés.
+          </p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             <Link
               href="/privacy"
@@ -122,5 +129,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
